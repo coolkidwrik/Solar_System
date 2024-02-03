@@ -1,0 +1,1 @@
+Texture maps aquired from: https://planetpixelemporium.com/earth.html
