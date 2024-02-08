@@ -9,10 +9,6 @@ import { OBJLoader } from 'jsm/loaders/OBJLoader.js';
 import { GLTFLoader } from 'jsm/loaders/GLTFLoader.js';
 
 function setup() {
-    // Check WebGL Version
-    // if (!WEBGL.isWebGL2Available()) {
-    //     document.body.appendChild(WEBGL.getWebGL2ErrorMessage());
-    // }
 
     // Create a scene
     const w = window.innerWidth;
