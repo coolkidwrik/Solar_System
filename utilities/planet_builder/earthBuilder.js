@@ -61,6 +61,10 @@ function earthBuilder() {
     earthGroup.add(cloudsMesh);           // earthGroup.children[2]
     // earthGroup.add(glowMesh);             // earthGroup.children[3]
 
+
+    // scale earth group
+    earthGroup.scale.setScalar(0.1);
+
     return earthGroup;
 }
 
