@@ -17,7 +17,7 @@ scene.add(earth);
 // earthGroup.add(earthMesh);            // earthGroup.children[0] 
 // earthGroup.add(lightsMesh);           // earthGroup.children[1]
 // earthGroup.add(cloudsMesh);           // earthGroup.children[2]
-// // earthGroup.add(glowMesh);             // earthGroup.children[3]
+// earthGroup.add(glowMesh);             // earthGroup.children[3]
 
 // ambience 
 const sunLight = new THREE.DirectionalLight(0xffffff);
@@ -36,7 +36,7 @@ function animate() {
     earth.children[0].rotation.y += 0.002;
     earth.children[1].rotation.y += 0.002;
     earth.children[2].rotation.y += 0.0025;
-    // earth.children[3].rotation.y += 0.002;
+    earth.children[3].rotation.y += 0.002;
     stars.rotation.y -= 0.0002;
 
     // Render the scene

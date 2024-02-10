@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-// import { getFresnelMat } from './getFresnelMat.js';
+import { getFresnelMat } from '../getFresnelMat.js';
 
 function earthBuilder() {
     // Create a earth Group model and add elements of the earth to it
@@ -35,13 +35,8 @@ function earthBuilder() {
     blending: THREE.AdditiveBlending
     });
 
-
-    // // TODO: get working
     // // create atmospheric glow
-    // const fresnelMat = getFresnelMat();
-    // const glowMesh = new THREE.Mesh(geometry, fresnelMat);
-    // glowMesh.scale.setScalar(1.01);
-
+    const fresnelMat = getFresnelMat();
 
 
 
@@ -51,15 +46,15 @@ function earthBuilder() {
     const lightsMesh = new THREE.Mesh(geometry, lightsMat);
     const cloudsMesh = new THREE.Mesh(geometry, cloudsMat);
     cloudsMesh.scale.setScalar(1.004);
-    // const glowMesh = new THREE.Mesh(geometry, fresnelMat);
-    // glowMesh.scale.setScalar(1.01);
+    const glowMesh = new THREE.Mesh(geometry, fresnelMat);
+    glowMesh.scale.setScalar(1.01);
 
 
     // add elements to earthGroup in order
     earthGroup.add(earthMesh);            // earthGroup.children[0] 
     earthGroup.add(lightsMesh);           // earthGroup.children[1]
     earthGroup.add(cloudsMesh);           // earthGroup.children[2]
-    // earthGroup.add(glowMesh);             // earthGroup.children[3]
+    earthGroup.add(glowMesh);             // earthGroup.children[3]
 
 
     // scale earth group
