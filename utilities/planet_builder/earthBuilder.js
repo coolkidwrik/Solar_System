@@ -4,7 +4,8 @@ import { getFresnelMat } from '../getFresnelMat.js';
 function earthBuilder() {
     // Create a earth Group model and add elements of the earth to it
     const earthGroup = new THREE.Group();
-    earthGroup.rotation.z = -23.4 * Math.PI / 180;
+    const axial_tilt = -23.4 * Math.PI / 180;
+    earthGroup.rotation.z = axial_tilt;
     const detail = 12; // changes number of edges on the sphere
     const loader = new THREE.TextureLoader();
 
@@ -35,8 +36,9 @@ function earthBuilder() {
     blending: THREE.AdditiveBlending
     });
 
-    // // create atmospheric glow
-    const fresnelMat = getFresnelMat();
+    // create atmospheric glow
+    // default rimHex = 0x20c7fa, facingHex = 0x000000
+    const fresnelMat = getFresnelMat(0x20c7fa, 0x000000);
 
 
 

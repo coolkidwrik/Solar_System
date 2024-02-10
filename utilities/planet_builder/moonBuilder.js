@@ -1,19 +1,25 @@
 import * as THREE from 'three';
 
 function moonBuilder() {
-    // TODO: work in progress
-    const geometry = new THREE.SphereGeometry(0.5, 32, 32);
+    // Create a earth Group model and add elements of the earth to it
+    const moonGroup = new THREE.Group();
+    const axial_tilt = -1.5 * Math.PI / 180;
+    moonGroup.rotation.z = axial_tilt;
+    const detail = 12; // changes number of edges on the sphere
+    const loader = new THREE.TextureLoader();
+
+    // create the earth geometry
+    const geometry = new THREE.IcosahedronGeometry(1, detail);
+
+
+
+    // describe materials to make up the earth
+
+    // earth daytime texture
     const material = new THREE.MeshPhongMaterial({
-        color: 0x888888,
-        emissive: 0x222222,
-        specular: 0x222222,
-        shininess: 20
+    map: loader.load("../textures/moonmap1k.jpg"),
     });
-    const moon = new THREE.Mesh(geometry, material);
-    moon.position.set(1.5, 0, 0);
-    moon.receiveShadow = true;
-    moon.castShadow = true;
-    return moon;
+
 }
 
 export { earthBuilder };
