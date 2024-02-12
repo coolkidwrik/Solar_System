@@ -25,6 +25,7 @@ function getOrbitalAcceleration(orbitalRadius, mass1, mass2) {
     // this also equals the force of gravity acting on the moon
     // if we solve for v, we get v = sqrt((G * M) / r)
     const v = Math.sqrt((G * M) / r);
+    console.log(ax, ay, v);
 
     return { ax, ay, v };
 }
