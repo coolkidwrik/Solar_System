@@ -21,6 +21,7 @@ function setup() {
 
     // Create a renderer
     const renderer = new THREE.WebGLRenderer();
+    renderer.shadowMap.enabled = true;
     renderer.setSize(w, h);
     document.body.appendChild(renderer.domElement);
 

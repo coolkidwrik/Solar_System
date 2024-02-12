@@ -32,14 +32,6 @@ scene.add(earth);
 // earthGroup.add(cloudsMesh);           // earthGroup.children[2]
 // earthGroup.add(glowMesh);             // earthGroup.children[3]
 
-// ambience 
-const sunLight = new THREE.DirectionalLight(0xffffff);
-sunLight.position.set(-5, 0.5, 1.5);
-scene.add(sunLight);
-
-// const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x444444);
-// scene.add(hemisphereLight);
-
 
 
 // add moon
@@ -83,6 +75,29 @@ function updateMoonPosition() {
   const newZ = Math.sin(angle + angleIncrement) * moonOrbitRadius;
   moon.position.set(newX, 0, newZ);
 }
+
+
+
+
+// ambience 
+const sunLight = new THREE.DirectionalLight(0xffffff);
+sunLight.position.set(-5, 0.5, 1.5);
+sunLight.castShadow = true; // Enable shadow casting
+sunLight.shadow.mapSize.width = 2048; // Shadow map size
+sunLight.shadow.mapSize.height = 2048;
+sunLight.shadow.camera.near = 0.5;
+sunLight.shadow.camera.far = 500;
+scene.add(sunLight);
+
+// Enable shadows on both earth and moon
+// TODO: work in progress
+earth.children[0].castShadow = true; // Assuming earth's mesh is the first child
+earth.children[0].receiveShadow = true; // Enable receiving shadows on earth
+// Enable shadow casting for moon
+moon.children[0].castShadow = true; // Assuming moon's mesh is the first child
+moon.children[0].receiveShadow = true; // Enable receiving shadows on moon
+
+
 
 // Animation loop
 function animate() {
