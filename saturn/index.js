@@ -14,17 +14,28 @@ const {
 let saturn = saturnBuilder();
 scene.add(saturn);
 
-// saturnGroup.add(saturnMesh);            // earthGroup.children[0] 
-// saturnGroup.add(ringsMesh);           // earthGroup.children[1]
+// saturnGroup.add(saturnMesh);         // earthGroup.children[0] 
+// saturnGroup.add(ringsMesh);          // earthGroup.children[1]
 // saturnGroup.add(glowMesh);           // earthGroup.children[2]
 
 // ambience 
 const sunLight = new THREE.DirectionalLight(0xffffff);
 sunLight.position.set(-5, 0.5, 1.5);
+sunLight.castShadow = true; // Enable shadow casting
+sunLight.shadow.mapSize.width = 2048; // Shadow map size
+sunLight.shadow.mapSize.height = 2048;
+sunLight.shadow.camera.near = 0.5;
+sunLight.shadow.camera.far = 500;
 scene.add(sunLight);
 
-// const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x444444);
-// scene.add(hemisphereLight);
+
+// Enable shadows on both saturn and rings
+saturn.children[0].castShadow = true; 
+saturn.children[0].receiveShadow = true; 
+// Enable shadow casting for rings
+saturn.children[1].castShadow = true; 
+saturn.children[1].receiveShadow = true; 
+
 
 
 
@@ -33,7 +44,7 @@ function animate() {
     requestAnimationFrame(animate);
 
     saturn.children[0].rotation.y += 0.002;
-    // saturn.children[1].rotation.y += 0.0025;
+    saturn.children[1].rotation.z -= 0.0003;
     saturn.children[2].rotation.y += 0.002;
     stars.rotation.y -= 0.0002;
 

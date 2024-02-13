@@ -14,29 +14,7 @@ function saturnBuilder() { // TODO: work in progress
     const geometry = new THREE.IcosahedronGeometry(1, detail);
 
     // Saturn ring geometry
-    const ringGeometry = new THREE.RingGeometry(1.2, 2, 64);
-
-
-
-
-    const vs = `
-    varying vec2 vUv;
-
-    void main() {
-        vUv = uv;
-        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-    }`;
-
-    const fs = `uniform sampler2D texture;
-    varying vec2 vUv;
-
-    void main() {
-        float aspect = 2.0; // Aspect ratio of the texture
-        vec2 uv = vUv * vec2(aspect, 1.0) + vec2(0.5 - 0.5 * aspect, 0.0);
-        vec4 color = texture2D(texture, uv);
-        gl_FragColor = color;
-    }`;
-
+    const ringGeometry = new THREE.RingGeometry(1.2, 2.2, 64);
 
 
     // describe materials to make up the saturn
@@ -47,34 +25,33 @@ function saturnBuilder() { // TODO: work in progress
     });
 
     // Saturn ring texture
-    const ringMaterial = new THREE.ShaderMaterial({
-        uniforms: {
-            texture: { value: loader.load("../textures/saturnringcolor.jpg") }
-        },
-        vertexShader: vs,
-        fragmentShader: fs,
+    const ringMaterial = new THREE.MeshPhongMaterial({
+        map: loader.load("../textures/saturn_ring.png"),
         side: THREE.DoubleSide,
-        transparent: true,
+        emissive: new THREE.Color(0x888888), // Set the emissive color to white or any other bright color
+        emissiveIntensity: 0.2, // Increase the emissive intensity to make the rings brighter
     });
 
     // // create atmospheric glow
-    const fresnelMat = getFresnelMat(0xf5e3b3, 0x000000);
+    const fresnelMat = getFresnelMat(0xf0d795, 0x000000);
 
 
 
 
     // create meshes for each material
     const saturnMesh = new THREE.Mesh(geometry, material);
+
     const ringMesh = new THREE.Mesh(ringGeometry, ringMaterial);
     ringMesh.rotation.x = Math.PI / 2; // Rotate the ring to be parallel to the x-z plane
+    
     const glowMesh = new THREE.Mesh(geometry, fresnelMat);
     glowMesh.scale.setScalar(1.01);
 
 
 
     // add elements to earthGroup in order
-    saturnGroup.add(saturnMesh);            // earthGroup.children[0] 
-    saturnGroup.add(ringMesh);            // earthGroup.children[1]
+    saturnGroup.add(saturnMesh);           // earthGroup.children[0] 
+    saturnGroup.add(ringMesh);             // earthGroup.children[1]
     saturnGroup.add(glowMesh);             // earthGroup.children[2]
 
 

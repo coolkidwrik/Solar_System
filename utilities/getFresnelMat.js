@@ -4,7 +4,7 @@ import * as THREE from "three";
 var vs = await fetch('../utilities/glsl/fresnel.vs.glsl').then((response) => response.text());
 var fs = await fetch('../utilities/glsl/fresnel.fs.glsl').then((response) => response.text());
 
-function getFresnelMat({rimHex = 0x5bc2fc, facingHex = 0x000000} = {}) {
+function getFresnelMat(rimHex, facingHex) {
   const uniforms = {
     color1: { value: new THREE.Color(rimHex) },
     color2: { value: new THREE.Color(facingHex) },

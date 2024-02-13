@@ -38,7 +38,7 @@ function earthBuilder() {
 
     // create atmospheric glow
     // default rimHex = 0x20c7fa, facingHex = 0x000000
-    const fresnelMat = getFresnelMat(0x20c7fa, 0x000000);
+    const fresnelMat = getFresnelMat(0x5bc2fc, 0x000000);
 
 
 
