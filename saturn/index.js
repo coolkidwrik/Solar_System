@@ -14,9 +14,9 @@ const {
 let saturn = saturnBuilder();
 scene.add(saturn);
 
-// saturnGroup.add(saturnMesh);         // earthGroup.children[0] 
-// saturnGroup.add(ringsMesh);          // earthGroup.children[1]
-// saturnGroup.add(glowMesh);           // earthGroup.children[2]
+// saturnGroup.add(saturnMesh);         // saturnGroup.children[0] 
+// saturnGroup.add(ringsMesh);          // saturnGroup.children[1]
+// saturnGroup.add(glowMesh);           // saturnGroup.children[2]
 
 // ambience 
 const sunLight = new THREE.DirectionalLight(0xffffff);

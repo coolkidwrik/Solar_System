@@ -1,50 +1,32 @@
 import * as THREE from 'three';
-import { OrbitControls } from 'jsm/controls/OrbitControls.js';
+import { setup } from '../utilities/setup.js';
+import { sunBuilder } from '../utilities/planet_builder/sunBuilder.js';
 
-import getStarfield from "../utilities/getStars.js";
-import { getFresnelMat } from "../utilities/getFresnelMat.js";
+// Setup and return the scene and related objects.
+const {
+  renderer,
+  scene,
+  camera,
+  stars
+} = setup();
 
-// Create a scene
-const w = window.innerWidth;
-const h = window.innerHeight;
-const scene = new THREE.Scene();
+// Create a earth Group model and add elements of the earth to it
+let sun = sunBuilder();
+scene.add(sun);
 
-// Create a camera
-const camera = new THREE.PerspectiveCamera(75, w/h, 0.1, 1000);
-camera.position.z = 5;
+// sunGroup.add(sunMesh);         // sunGroup.children[0] 
+// sunGroup.add(glowMesh);        // sunGroup.children[1]
 
-// Create a renderer
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(w, h);
-document.body.appendChild(renderer.domElement);
-
-// Create a sun
-const sunGroup = new THREE.Group();
-scene.add(sunGroup);
-new OrbitControls(camera, renderer.domElement);
-const detail = 12; // changes number of edges on the sphere
-const loader = new THREE.TextureLoader();
-const geometry = new THREE.IcosahedronGeometry(1, detail);
-const material = new THREE.MeshPhongMaterial({
-  map: loader.load("../textures/sunmap.jpg"),
-});
-const sunMesh = new THREE.Mesh(geometry, material);
-sunGroup.add(sunMesh);
-
-const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0xffffff);
-scene.add(hemisphereLight);
-
-const fresnelMat = getFresnelMat();
-const glowMesh = new THREE.Mesh(geometry, fresnelMat);
-glowMesh.scale.setScalar(1.01);
-sunGroup.add(glowMesh);
-
-const stars = getStarfield({numStars: 2000});
-scene.add(stars);
-
+// ambience 
 const sunLight = new THREE.DirectionalLight(0xffffff);
-sunLight.position.set(0, 0, 0);
+sunLight.position.set(0, 0, 0); // Sun is at the center
+sunLight.castShadow = true; // Enable shadow casting
+sunLight.shadow.mapSize.width = 2048; // Shadow map size
+sunLight.shadow.mapSize.height = 2048;
+sunLight.shadow.camera.near = 0.5;
+sunLight.shadow.camera.far = 500;
 scene.add(sunLight);
+
 
 
 
@@ -52,7 +34,8 @@ scene.add(sunLight);
 function animate() {
     requestAnimationFrame(animate);
 
-    sunMesh.rotation.y += 0.002;
+    sun.children[0].rotation.y += 0.002;
+    // sun.children[1].rotation.y += 0.002;
     stars.rotation.y -= 0.0002;
 
     // Render the scene
@@ -61,14 +44,3 @@ function animate() {
 
 // Start the animation loop
 animate();
-
-
-// handle window resize
-function handleWindowResize () {
-    let w = window.innerWidth;
-    let h = window.innerHeight;
-    camera.aspect = w / h;
-    camera.updateProjectionMatrix();
-    renderer.setSize(w, h);
-  }
-  window.addEventListener('resize', handleWindowResize, false);

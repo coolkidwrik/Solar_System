@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { getFresnelMat } from '../getFresnelMat.js';
 
-function saturnBuilder() { // TODO: work in progress
+function saturnBuilder() {
 
     // Create a saturn Group model and add elements of the saturn to it
     const saturnGroup = new THREE.Group();
@@ -50,9 +50,9 @@ function saturnBuilder() { // TODO: work in progress
 
 
     // add elements to earthGroup in order
-    saturnGroup.add(saturnMesh);           // earthGroup.children[0] 
-    saturnGroup.add(ringMesh);             // earthGroup.children[1]
-    saturnGroup.add(glowMesh);             // earthGroup.children[2]
+    saturnGroup.add(saturnMesh);           // saturnGroup.children[0] 
+    saturnGroup.add(ringMesh);             // saturnGroup.children[1]
+    saturnGroup.add(glowMesh);             // saturnGroup.children[2]
 
 
     // scale earth group
