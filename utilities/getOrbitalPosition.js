@@ -3,7 +3,7 @@
 const G = 6.67430 * Math.pow(10, -11); // gravitational constant
 const AU = 149.6 * Math.pow(10, 6); // astronomical unit
 const SCALE = 1/AU; // scale of the model
-const TIMESTEP = 1/(60*60*24*125); // time step (1 earthday = 125 second in the model)
+const TIMESTEP = 1/(60*60*24*50); // time step (1 earthday = 50 second in the model)
 
 // This function calculates the acceleration and velocity of the planets
 function getOrbitalPosition(orbitalRadius, mass1, mass2, moon, planet) {

@@ -69,7 +69,7 @@ function animate() {
 
     earth.children[0].rotation.y += 0.002; // 1/500 (1 day = 500 seconds in the model)
     earth.children[1].rotation.y += 0.002;
-    earth.children[2].rotation.y += 0.0025;
+    earth.children[2].rotation.y += 0.0026;
     earth.children[3].rotation.y += 0.002;
     moon.children[0].rotation.y += 0.002; // moon rotates at same speed as earth
     stars.rotation.y -= 0.0002;
