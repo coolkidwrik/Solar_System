@@ -15,6 +15,7 @@ const {
 
 // Create a earth Group model and add elements of the earth to it
 let earth = earthBuilder();
+// earth.position.set(0, 0, 0);
 scene.add(earth);
 
 // earthGroup.add(earthMesh);            // earthGroup.children[0] 
@@ -28,8 +29,9 @@ scene.add(earth);
 const moon = moonBuilder();
 earth.add(moon);              // earthGroup.children[4]
 
+
 // have moon orbit around the earth
-earth.children[4].position.x = 0.5;
+earth.children[4].position.x = 2;
 scene.add(moon);
 
 function updateMoonPosition() {
@@ -44,8 +46,9 @@ function updateMoonPosition() {
 
 
 
+
 // ambience 
-const sunLight = new THREE.DirectionalLight(0xffffff);
+const sunLight = new THREE.DirectionalLight(0xffffff, 0.8);
 sunLight.position.set(-5, 0.5, 1.5);
 sunLight.castShadow = true; // Enable shadow casting
 sunLight.shadow.mapSize.width = 2048; // Shadow map size
@@ -61,12 +64,14 @@ earth.children[0].receiveShadow = true; // Enable receiving shadows on earth
 moon.children[0].castShadow = true; // Assuming moon's mesh is the first child
 moon.children[0].receiveShadow = true; // Enable receiving shadows on moon
 
+// earth.position.set(-2, 0, 0);
+
 
 
 // Animation loop
 function animate() {
     requestAnimationFrame(animate);
-
+    // earth.position.set(earth.position.x-0.001, 0, 0);
     earth.children[0].rotation.y += 0.002; // 1/500 (1 day = 500 seconds in the model)
     earth.children[1].rotation.y += 0.002;
     earth.children[2].rotation.y += 0.0026;

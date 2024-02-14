@@ -25,7 +25,7 @@ function moonBuilder() {
     moonGroup.add(moonMesh);            // moonGroup.children[0]
 
     // scale earth group
-    moonGroup.scale.setScalar(0.0167); // approx 1/6th the size of earth
+    moonGroup.scale.setScalar(0.05); // approx 1/6th the size of earth
 
     return moonGroup;
 }

@@ -24,7 +24,7 @@ function sunBuilder() {
     });
 
     // // create atmospheric glow
-    const fresnelMat = getFresnelMat(0xebb515, 0x000000);
+    const fresnelMat = getFresnelMat(0xebb515, 0xebb515);
 
 
 

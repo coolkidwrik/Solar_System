@@ -60,7 +60,7 @@ function earthBuilder() {
 
 
     // scale earth group
-    earthGroup.scale.setScalar(0.1);
+    earthGroup.scale.setScalar(0.3);
 
     return earthGroup;
 }
