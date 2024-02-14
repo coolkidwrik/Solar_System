@@ -68,8 +68,10 @@ animate();
 
 
 
-// helpers
 
+
+
+// helpers
 
 function addSunLight() {
   const sunWorldRadius = sun.scale.x;
@@ -107,7 +109,7 @@ function enableShadows(sunLight) {
 function updatePlanetPositions() {
   updateSunPosition();
   // updateEarthAndMoonPosition();
-  // updateEarthPosition();
+  updateEarthPosition();
 }
 
 // Update sun positions
