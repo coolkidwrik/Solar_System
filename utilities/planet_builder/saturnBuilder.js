@@ -28,6 +28,7 @@ function saturnBuilder() {
     const ringMaterial = new THREE.MeshPhongMaterial({
         map: loader.load("../textures/saturn_ring.png"),
         side: THREE.DoubleSide,
+        transparent: true,
         emissive: new THREE.Color(0x888888), // Set the emissive color to white or any other bright color
         emissiveIntensity: 0.2, // Increase the emissive intensity to make the rings brighter
     });
@@ -49,7 +50,7 @@ function saturnBuilder() {
 
 
 
-    // add elements to earthGroup in order
+    // add elements to saturnGroup in order
     saturnGroup.add(saturnMesh);           // saturnGroup.children[0] 
     saturnGroup.add(ringMesh);             // saturnGroup.children[1]
     saturnGroup.add(glowMesh);             // saturnGroup.children[2]

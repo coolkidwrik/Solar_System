@@ -9,8 +9,12 @@ import { mercuryBuilder } from '../utilities/planet_builder/mercuryBuilder.js';
 import { venusBuilder } from '../utilities/planet_builder/venusBuilder.js';
 import { earthBuilder } from '../utilities/planet_builder/earthBuilder.js';
 import { marsBuilder } from '../utilities/planet_builder/marsBuilder.js';
+import { jupiterBuilder } from '../utilities/planet_builder/jupiterBuilder.js';
 import { moonBuilder } from '../utilities/planet_builder/moonBuilder.js';
 import { saturnBuilder } from '../utilities/planet_builder/saturnBuilder.js';
+import { uranusBuilder } from '../utilities/planet_builder/uranusBuilder.js';
+import { neptuneBuilder } from '../utilities/planet_builder/neptuneBuilder.js';
+import { plutoBuilder } from '../utilities/planet_builder/plutoBuilder.js';
 
 // Setup and return the scene and related objects.
 const {
@@ -21,7 +25,7 @@ const {
 } = setup();
 
 // create test planet demonstration
-let test = marsBuilder();
+let test = uranusBuilder();
 
 // add elements to the scene
 scene.add(test);
@@ -38,6 +42,7 @@ function animate() {
     updatePlanetPositions();
     stars.rotation.y -= 0.0002;
     test.children[0].rotation.y += 0.002;
+    test.children[1].rotation.z += 0.004;
 
     // Render the scene
     renderer.render(scene, camera);
