@@ -40,6 +40,7 @@ export default function getStars({ numStars = 1500 } = {}) {
     map: new THREE.TextureLoader().load(
       "../textures/star.png"
     ),
+    // transparent: true,
   });
   const points = new THREE.Points(geo, mat);
   return points;

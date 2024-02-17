@@ -23,6 +23,10 @@ const {
   stars
 } = setup();
 
+// // create background
+// const spaceTexture = new THREE.TextureLoader().load('../textures/Milky_way.jpg');
+// scene.background = spaceTexture;
+
 
 // // // create solar system
 // let system = new THREE.Group();
@@ -134,7 +138,7 @@ function updatePlanetPositions() {
   updateMercuryPosition();
   updateVenusPosition();
   // updateEarthAndMoonPosition();
-  // updateEarthPosition();
+  updateEarthPosition();
   updateMarsPosition();
   updateJupiterPosition();
   updateSaturnPosition();
@@ -162,6 +166,17 @@ function updateVenusPosition() {
   // rotation info
   venus.children[0].rotation.y += 0.0008;
   venus.children[1].rotation.y += 0.0001;
+  // revolution info
+  // TODO
+}
+
+// Update earth position
+function updateEarthPosition() {
+  // rotation info
+  earth.children[0].rotation.y += 0.002;
+  earth.children[1].rotation.y += 0.002;
+  earth.children[2].rotation.y += 0.0026;
+  earth.children[3].rotation.y += 0.002;
   // revolution info
   // TODO
 }
@@ -248,11 +263,11 @@ function updatePlutoPosition() {
 //   moon.position.set(newMoonX, 0, newMoonZ);
 // }
 
-// // Update earth position
-function updateEarthPosition() { 
-  const earthOrbitRadius = 149.6 * Math.pow(10, 6) * 1000; // meters
-  const sunMass = 1.989 * Math.pow(10, 30); // kg
-  const earthMass = 5.972 * Math.pow(10, 24); // kg
-  const { newEarthX, newEarthZ } = getOrbitalPosition(earthOrbitRadius, sunMass, earthMass, earth, sun, 5);
-  earth.position.set(newEarthX, 0, newEarthZ);
-}
+// // // Update earth position
+// function updateEarthPosition() { 
+//   const earthOrbitRadius = 149.6 * Math.pow(10, 6) * 1000; // meters
+//   const sunMass = 1.989 * Math.pow(10, 30); // kg
+//   const earthMass = 5.972 * Math.pow(10, 24); // kg
+//   const { newEarthX, newEarthZ } = getOrbitalPosition(earthOrbitRadius, sunMass, earthMass, earth, sun, 5);
+//   earth.position.set(newEarthX, 0, newEarthZ);
+// }
