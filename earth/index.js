@@ -23,8 +23,6 @@ scene.add(earth);
 // earthGroup.add(cloudsMesh);           // earthGroup.children[2]
 // earthGroup.add(glowMesh);             // earthGroup.children[3]
 
-
-
 // add moon
 const moon = moonBuilder();
 earth.add(moon);              // earthGroup.children[4]
@@ -44,8 +42,6 @@ function updateMoonPosition() {
 
 
 
-
-
 // ambience 
 const sunLight = new THREE.DirectionalLight(0xffffff, 0.8);
 sunLight.position.set(-5, 0.5, 1.5);
@@ -62,8 +58,6 @@ earth.children[0].receiveShadow = true; // Enable receiving shadows on earth
 // Enable shadow casting for moon
 moon.children[0].castShadow = true; // Assuming moon's mesh is the first child
 moon.children[0].receiveShadow = true; // Enable receiving shadows on moon
-
-// earth.position.set(-2, 0, 0);
 
 
 

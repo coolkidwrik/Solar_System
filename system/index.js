@@ -4,9 +4,16 @@ import { getOrbitalPosition } from '../utilities/getOrbitalPosition.js';
 
 // Import planet builders
 import { sunBuilder } from '../utilities/planet_builder/sunBuilder.js';
+import { mercuryBuilder } from '../utilities/planet_builder/mercuryBuilder.js';
+import { venusBuilder } from '../utilities/planet_builder/venusBuilder.js';
 import { earthBuilder } from '../utilities/planet_builder/earthBuilder.js';
 import { moonBuilder } from '../utilities/planet_builder/moonBuilder.js';
+import { marsBuilder } from '../utilities/planet_builder/marsBuilder.js';
+import { jupiterBuilder } from '../utilities/planet_builder/jupiterBuilder.js';
 import { saturnBuilder } from '../utilities/planet_builder/saturnBuilder.js';
+import { uranusBuilder } from '../utilities/planet_builder/uranusBuilder.js';
+import { neptuneBuilder } from '../utilities/planet_builder/neptuneBuilder.js';
+import { plutoBuilder } from '../utilities/planet_builder/plutoBuilder.js';
 
 // Setup and return the scene and related objects.
 const {
@@ -21,34 +28,50 @@ const {
 // let system = new THREE.Group();
 
 // create elements of the solar system
-let sun = sunBuilder();
-let earth = earthBuilder();
-let moon = moonBuilder();
-let saturn = saturnBuilder();
+const sun = sunBuilder();
+const mercury = mercuryBuilder();
+const venus = venusBuilder();
+const earth = earthBuilder();
+const moon = moonBuilder();
+const mars = marsBuilder();
+const jupiter = jupiterBuilder();
+const saturn = saturnBuilder();
+const uranus = uranusBuilder();
+const neptune = neptuneBuilder();
+const pluto = plutoBuilder();
 
 // add elements to the solar system
-sun.add(earth);
+// sun.add(earth);
 
 
 // set initial positions of the elements
-earth.position.set(-5, 0, 0);
+sun.position.set(0, 0, 0);
+mercury.position.set(2.2, 0, 0);
+venus.position.set(3, 0, 0);
+earth.position.set(4, 0, 0);
+mars.position.set(5, 0, 0);
+jupiter.position.set(10, 0, 0);
+saturn.position.set(18, 0, 0);
+uranus.position.set(23, 0, 0);
+neptune.position.set(28, 0, 0);
+pluto.position.set(30, 0, 0);
 
 // add elements to the scene
 scene.add(sun);
+scene.add(mercury);
+scene.add(venus);
 scene.add(earth);
+scene.add(mars);
+scene.add(jupiter);
+scene.add(saturn);
+scene.add(uranus);
+scene.add(neptune);
+scene.add(pluto);
 
 
-
-
-
-
-// sunGroup.add(sunMesh);         // sunGroup.children[0] 
-// sunGroup.add(glowMesh);        // sunGroup.children[1]
 
 // ambience 
 addSunLight();
-
-
 
 
 // Animation loop
@@ -108,14 +131,95 @@ function enableShadows(sunLight) {
 // update planet positions
 function updatePlanetPositions() {
   updateSunPosition();
+  updateMercuryPosition();
+  updateVenusPosition();
   // updateEarthAndMoonPosition();
-  updateEarthPosition();
+  // updateEarthPosition();
+  updateMarsPosition();
+  updateJupiterPosition();
+  updateSaturnPosition();
+  updateUranusPosition();
+  updateNeptunePosition();
+  updatePlutoPosition();
 }
 
-// Update sun positions
+// Update sun position
 function updateSunPosition() {
   sun.children[0].rotation.y += 0.002;
   sun.children[1].rotation.y += 0.002;
+}
+
+// Update mercury position
+function updateMercuryPosition() {
+  // rotation info
+  mercury.children[0].rotation.y += 0.0001;
+  // revolution info
+  // TODO
+}
+
+// Update venus position
+function updateVenusPosition() {
+  // rotation info
+  venus.children[0].rotation.y += 0.0008;
+  venus.children[1].rotation.y += 0.0001;
+  // revolution info
+  // TODO
+}
+
+// Update mars position
+function updateMarsPosition() {
+  // rotation info
+  mars.children[0].rotation.y += 0.002;
+  mars.children[1].rotation.y += 0.002;
+  // revolution info
+  // TODO
+}
+
+// Update jupiter position
+function updateJupiterPosition() {
+  // rotation info
+  jupiter.children[0].rotation.y += 0.004;
+  jupiter.children[1].rotation.y += 0.004;
+  // revolution info
+  // TODO
+}
+
+// Update saturn position
+function updateSaturnPosition() {
+  // rotation info
+  saturn.children[0].rotation.y += 0.004;
+  saturn.children[1].rotation.z += 0.0043;
+  saturn.children[2].rotation.y += 0.004;
+  // revolution info
+  // TODO
+}
+
+// Update uranus position
+function updateUranusPosition() {
+  // rotation info
+  uranus.children[0].rotation.y += 0.003;
+  uranus.children[1].rotation.z += 0.0038;
+  uranus.children[2].rotation.y += 0.003;
+  // revolution info
+  // TODO
+}
+
+// Update neptune position
+function updateNeptunePosition() {
+  // rotation info
+  neptune.children[0].rotation.y += 0.003;
+  neptune.children[1].rotation.y += 0.003;
+  // revolution info
+  // TODO
+}
+
+// Update pluto position 
+function updatePlutoPosition() {
+  // rotation info
+  pluto.children[0].rotation.y += 0.001;
+  pluto.children[1].rotation.y += 0.001;
+  // revolution info
+  // TODO
 }
 
 
@@ -149,6 +253,6 @@ function updateEarthPosition() {
   const earthOrbitRadius = 149.6 * Math.pow(10, 6) * 1000; // meters
   const sunMass = 1.989 * Math.pow(10, 30); // kg
   const earthMass = 5.972 * Math.pow(10, 24); // kg
-  const { newEarthX, newEarthZ } = getOrbitalPosition(earthOrbitRadius, sunMass, earthMass, earth, sun);
+  const { newEarthX, newEarthZ } = getOrbitalPosition(earthOrbitRadius, sunMass, earthMass, earth, sun, 5);
   earth.position.set(newEarthX, 0, newEarthZ);
 }

@@ -43,7 +43,7 @@ function sunBuilder() {
 
 
     // scale earth group
-    sunGroup.scale.setScalar(1.6);
+    sunGroup.scale.setScalar(1.8);
 
     return sunGroup;
 }

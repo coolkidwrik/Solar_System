@@ -38,7 +38,7 @@ function jupiterBuilder() {
 
 
     // scale jupiter group
-    jupiterGroup.scale.setScalar(1.02);
+    jupiterGroup.scale.setScalar(1.2);
 
     return jupiterGroup;
 }

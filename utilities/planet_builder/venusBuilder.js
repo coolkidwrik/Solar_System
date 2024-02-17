@@ -39,7 +39,7 @@ function venusBuilder() {
 
 
     // scale venus group
-    venusGroup.scale.setScalar(0.18);
+    venusGroup.scale.setScalar(0.24);
 
     return venusGroup;
 }
