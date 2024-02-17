@@ -5,7 +5,10 @@ import { getOrbitalPosition } from '../utilities/getOrbitalPosition.js';
 // Import planet builders
 // can use each import to test creation of each planet
 import { sunBuilder } from '../utilities/planet_builder/sunBuilder.js';
+import { mercuryBuilder } from '../utilities/planet_builder/mercuryBuilder.js';
+import { venusBuilder } from '../utilities/planet_builder/venusBuilder.js';
 import { earthBuilder } from '../utilities/planet_builder/earthBuilder.js';
+import { marsBuilder } from '../utilities/planet_builder/marsBuilder.js';
 import { moonBuilder } from '../utilities/planet_builder/moonBuilder.js';
 import { saturnBuilder } from '../utilities/planet_builder/saturnBuilder.js';
 
@@ -18,7 +21,7 @@ const {
 } = setup();
 
 // create test planet demonstration
-let test = earthBuilder();
+let test = marsBuilder();
 
 // add elements to the scene
 scene.add(test);
@@ -34,6 +37,7 @@ function animate() {
     // Update planet positions
     updatePlanetPositions();
     stars.rotation.y -= 0.0002;
+    test.children[0].rotation.y += 0.002;
 
     // Render the scene
     renderer.render(scene, camera);
