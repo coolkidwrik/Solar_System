@@ -31,7 +31,6 @@ earth.add(moon);              // earthGroup.children[4]
 
 
 // have moon orbit around the earth
-earth.children[4].position.x = 2;
 scene.add(moon);
 
 function updateMoonPosition() {
@@ -39,7 +38,7 @@ function updateMoonPosition() {
   const earthMass = 5.972 * Math.pow(10, 24); // kg
   const moonMass = 7.342 * Math.pow(10, 22); // kg
   const moonOrbitRadius = 384400 * 1000; // meters
-  const { newX, newZ } = getOrbitalPosition(moonOrbitRadius, earthMass, moonMass, moon, earth);
+  const { newX, newZ } = getOrbitalPosition(moonOrbitRadius, earthMass, moonMass, moon, earth, 2);
   moon.position.set(newX, 0, newZ);
 }
 
