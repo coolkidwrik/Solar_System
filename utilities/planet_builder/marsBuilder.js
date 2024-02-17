@@ -28,6 +28,9 @@ function marsBuilder() {
     const glowMesh = new THREE.Mesh(geometry, fresnelMat);
     glowMesh.scale.setScalar(1.01);
 
+    // add shadows to marsMesh
+    marsMesh.castShadow = true;
+    marsMesh.receiveShadow = true;
 
     // add elements to marsGroup in order
     marsGroup.add(marsMesh);          // marsGroup.children[0] 

@@ -44,6 +44,12 @@ function uranusBuilder() {
     const glowMesh = new THREE.Mesh(geometry, fresnelMat);
     glowMesh.scale.setScalar(1.01);
 
+    // enable shadows for uranus and rings
+    uranusMesh.castShadow = true;
+    uranusMesh.receiveShadow = true;
+    ringMesh.castShadow = true;
+    ringMesh.receiveShadow = true;
+
 
 
     // add elements to earthGroup in order

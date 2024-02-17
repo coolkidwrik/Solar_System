@@ -28,6 +28,10 @@ function venusBuilder() {
     const glowMesh = new THREE.Mesh(geometry, fresnelMat);
     glowMesh.scale.setScalar(1.03);
 
+    // add shadows to venusMesh
+    venusMesh.castShadow = true;
+    venusMesh.receiveShadow = true;
+
 
     // add elements to venusGroup in order
     venusGroup.add(venusMesh);          // venusGroup.children[0] 

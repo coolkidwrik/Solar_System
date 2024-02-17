@@ -49,6 +49,12 @@ function saturnBuilder() {
     glowMesh.scale.setScalar(1.01);
 
 
+    // enable shadows for saturn and rings
+    saturnMesh.castShadow = true;
+    saturnMesh.receiveShadow = true;
+    ringMesh.castShadow = true;
+    ringMesh.receiveShadow = true;
+
 
     // add elements to saturnGroup in order
     saturnGroup.add(saturnMesh);           // saturnGroup.children[0] 

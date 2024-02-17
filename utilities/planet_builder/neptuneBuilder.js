@@ -28,6 +28,10 @@ function neptuneBuilder() {
     const glowMesh = new THREE.Mesh(geometry, fresnelMat);
     glowMesh.scale.setScalar(1.01);
 
+    // add shadows to neptuneMesh
+    neptuneMesh.castShadow = true;
+    neptuneMesh.receiveShadow = true;
+
 
     // add elements to neptuneGroup in order
     neptuneGroup.add(neptuneMesh);          // neptuneGroup.children[0] 

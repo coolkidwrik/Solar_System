@@ -24,6 +24,10 @@ function mercuryBuilder() {
     // create meshes for each material
     const mercuryMesh = new THREE.Mesh(geometry, material);
 
+    // add shadows to mercuryMesh
+    mercuryMesh.castShadow = true;
+    mercuryMesh.receiveShadow = true;
+
 
     // add elements to mercuryGroup in order
     mercuryGroup.add(mercuryMesh);            // mercuryGroup.children[0]

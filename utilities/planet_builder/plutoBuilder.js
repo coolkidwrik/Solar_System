@@ -28,6 +28,10 @@ function plutoBuilder() {
     const glowMesh = new THREE.Mesh(geometry, fresnelMat);
     glowMesh.scale.setScalar(1.01);
 
+    // add shadows to plutoMesh
+    plutoMesh.castShadow = true;
+    plutoMesh.receiveShadow = true;
+
 
     // add elements to plutoGroup in order
     plutoGroup.add(plutoMesh);          // plutoGroup.children[0] 

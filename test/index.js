@@ -25,7 +25,7 @@ const {
 } = setup();
 
 // create test planet demonstration
-let test = uranusBuilder();
+let test = saturnBuilder();
 
 // add elements to the scene
 scene.add(test);

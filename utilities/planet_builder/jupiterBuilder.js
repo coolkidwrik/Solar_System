@@ -28,6 +28,9 @@ function jupiterBuilder() {
     const glowMesh = new THREE.Mesh(geometry, fresnelMat);
     glowMesh.scale.setScalar(1.01);
 
+    // add shadows to jupiterMesh
+    jupiterMesh.castShadow = true;
+    jupiterMesh.receiveShadow = true;
 
     // add elements to jupiterGroup in order
     jupiterGroup.add(jupiterMesh);          // jupiterGroup.children[0] 

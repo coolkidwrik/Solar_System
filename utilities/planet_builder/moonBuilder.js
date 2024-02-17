@@ -21,6 +21,10 @@ function moonBuilder() {
     // create meshes for each material
     const moonMesh = new THREE.Mesh(geometry, material);
 
+    // add shadows to moonMesh
+    moonMesh.castShadow = true;
+    moonMesh.receiveShadow = true;
+
     // add elements to moonGroup in order
     moonGroup.add(moonMesh);            // moonGroup.children[0]
 

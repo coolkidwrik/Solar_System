@@ -51,6 +51,10 @@ function earthBuilder() {
     const glowMesh = new THREE.Mesh(geometry, fresnelMat);
     glowMesh.scale.setScalar(1.01);
 
+    // add shadows to earthMesh
+    earthMesh.castShadow = true;
+    earthMesh.receiveShadow = true;
+
 
     // add elements to earthGroup in order
     earthGroup.add(earthMesh);            // earthGroup.children[0] 
