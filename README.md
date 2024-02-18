@@ -41,6 +41,7 @@ here is the implementation of <a href = "./saturn/index.js">the Saturn model</a>
 <h4>
   <ins>Uranus</ins>
 </h4>
+Uranus is a pretty interesting planet in the sense that it has rings, and has an axial told of 98 degrees from the orbital plane! This makes the planet look like it is rotating on it's side
 
 ![Uranus model](./images/Uranus.png)
 
