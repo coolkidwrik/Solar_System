@@ -14,14 +14,17 @@ I started with, perhaps the most detailed and complex planet, our Earth. Using I
 <h4>
   <ins>Moon</ins>
 </h4>
-An important part of the Earth system is the moon that orbits it, so I implement 
-Using some <a href = "./utilities/getOrbitalPosition.js"> orbital physics</a>
+An important part of the Earth's system is the moon that orbits it, so I have implemented a model of the moon similar to the Earth. 
+Using some <a href = "./utilities/getOrbitalPosition.js"> orbital physics</a>, I implemented the orbiting mechanics of the moon around the earth.
 
 ![Earth and Moon model](./images/earth_moon.png)
 
 <h3>
   <ins>Planets with Rings</ins>
 </h3>
+
+The next most interesting planets to be working on were Saturn and Uranus because of their distinctive ring structure. This was done using Ring Geometry and Phong material which could cast and receive shadows (basic for Uranus because rings aren't as distinct to receive shadows).
+
 <h4>
   <ins>Saturn</ins>
 </h4>
@@ -38,6 +41,8 @@ Using some <a href = "./utilities/getOrbitalPosition.js"> orbital physics</a>
 <h3>
   <ins>Final Model</ins>
 </h3>
+
+Here is the final model of the entire solar system after I finished implementing all the planets. Here is the code to create <a href = "./utilities/planetBuilders">each planet</a>
 
 https://github.com/coolkidwrik/Solar_System/images/69946310/9592ac3d-bfbb-43d8-933e-24616d3f6763
 
