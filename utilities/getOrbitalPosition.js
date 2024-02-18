@@ -36,8 +36,8 @@ function getOrbitalPosition(orbitalRadius, mass1, mass2, moon, planet, modelRadi
   // Update moon's position
   // the angle between the current position vector and the x-axis
   const angle = Math.atan2(moon.position.z, moon.position.x);
-  const newX = planet.position.x + Math.cos(angle + angleIncrement) * moonOrbitRadius;
-  const newZ = planet.position.z + Math.sin(angle + angleIncrement) * moonOrbitRadius;
+  const newX = Math.cos(angle + angleIncrement) * moonOrbitRadius;
+  const newZ = Math.sin(angle + angleIncrement) * moonOrbitRadius;
 
     return { newX, newZ };
 }

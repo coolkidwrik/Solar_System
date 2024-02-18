@@ -94,10 +94,6 @@ function animate() {
 animate();
 
 
-
-
-
-
 // helpers
 
 function addSunLight() {
@@ -156,18 +152,20 @@ function updateSunPosition() {
 // Update mercury position
 function updateMercuryPosition() {
   // rotation info
-  mercury.children[0].rotation.y += 0.0001;
+  mercury.children[0].rotation.y += 0.0007;
   // revolution info
   // TODO
+  updateOrbit(-0.001, mercury, 2.2);
 }
 
 // Update venus position
 function updateVenusPosition() {
   // rotation info
-  venus.children[0].rotation.y += 0.0008;
+  venus.children[0].rotation.y += 0.0009;
   venus.children[1].rotation.y += 0.0001;
   // revolution info
   // TODO
+  updateOrbit(0.0009, venus, 3);
 }
 
 // Update earth position
@@ -179,7 +177,7 @@ function updateEarthPosition() {
   earth.children[3].rotation.y += 0.002;
   // revolution info
   // TODO
-}
+  updateOrbit(-0.004, earth, 4);}
 
 // Update mars position
 function updateMarsPosition() {
@@ -188,6 +186,7 @@ function updateMarsPosition() {
   mars.children[1].rotation.y += 0.002;
   // revolution info
   // TODO
+  updateOrbit(-0.003, mars, 5);
 }
 
 // Update jupiter position
@@ -197,6 +196,7 @@ function updateJupiterPosition() {
   jupiter.children[1].rotation.y += 0.004;
   // revolution info
   // TODO
+  updateOrbit(-0.005, jupiter, 10);
 }
 
 // Update saturn position
@@ -207,6 +207,7 @@ function updateSaturnPosition() {
   saturn.children[2].rotation.y += 0.004;
   // revolution info
   // TODO
+  updateOrbit(-0.004, saturn, 18);
 }
 
 // Update uranus position
@@ -217,6 +218,7 @@ function updateUranusPosition() {
   uranus.children[2].rotation.y += 0.003;
   // revolution info
   // TODO
+  updateOrbit(-0.003, uranus, 23);
 }
 
 // Update neptune position
@@ -226,6 +228,7 @@ function updateNeptunePosition() {
   neptune.children[1].rotation.y += 0.003;
   // revolution info
   // TODO
+  updateOrbit(-0.0045, neptune, 28);
 }
 
 // Update pluto position 
@@ -235,39 +238,14 @@ function updatePlutoPosition() {
   pluto.children[1].rotation.y += 0.001;
   // revolution info
   // TODO
+  updateOrbit(-0.001, pluto, 30);
 }
 
 
-// // Update earth and moon position
-// function updateEarthAndMoonPosition() {
-//   // Update earth and moon rotations
-//   earth.children[0].rotation.y += 0.002; // 1/500 (1 day = 500 seconds in the model)
-//   earth.children[1].rotation.y += 0.002;
-//   earth.children[2].rotation.y += 0.0026;
-//   earth.children[3].rotation.y += 0.002;
-//   moon.children[0].rotation.y += 0.002; // moon rotates at same speed as earth
-
-//   // Constants
-//   const sunMass = 1.989 * Math.pow(10, 30); // kg
-//   const earthMass = 5.972 * Math.pow(10, 24); // kg
-//   const moonMass = 7.342 * Math.pow(10, 22); // kg
-//   const moonOrbitRadius = 384400 * 1000; // meters
-//   const earthOrbitRadius = 149.6 * Math.pow(10, 6) * 1000; // meters
-
-//   // Update earth position
-//   const { newEarthX, newEarthZ } = getOrbitalPosition(earthOrbitRadius, sunMass, earthMass, earth, sun);
-//   earth.position.set(newEarthX, 0, newEarthZ);
-
-//   // Update moon position
-//   const { newMoonX, newMoonZ } = getOrbitalPosition(moonOrbitRadius, earthMass, moonMass, moon, earth);
-//   moon.position.set(newMoonX, 0, newMoonZ);
-// }
-
-// // // Update earth position
-// function updateEarthPosition() { 
-//   const earthOrbitRadius = 149.6 * Math.pow(10, 6) * 1000; // meters
-//   const sunMass = 1.989 * Math.pow(10, 30); // kg
-//   const earthMass = 5.972 * Math.pow(10, 24); // kg
-//   const { newEarthX, newEarthZ } = getOrbitalPosition(earthOrbitRadius, sunMass, earthMass, earth, sun, 5);
-//   earth.position.set(newEarthX, 0, newEarthZ);
-// }
+function updateOrbit(speed, planet, orbitRadius) {
+  const angleIncrement = speed;
+  const angle = Math.atan2(planet.position.z, planet.position.x);
+  const newX = Math.cos(angle + angleIncrement)* orbitRadius;
+  const newZ = Math.sin(angle + angleIncrement)* orbitRadius;
+  planet.position.set(newX, 0, newZ);
+}
