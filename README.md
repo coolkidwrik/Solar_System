@@ -10,9 +10,9 @@ I started with, perhaps the most detailed and complex planet, our Earth. Using I
 ![Earth and Moon model](./images/earth_moon.png)
 
 
-![Saturn model](./images/saturn.png)
+![Saturn model](./images/Saturn.png)
 
-![Uranus model](./images/uranus.png)
+![Uranus model](./images/Uranus.png)
 
 
 
