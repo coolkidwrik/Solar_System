@@ -10,6 +10,11 @@ I started with, perhaps the most detailed and complex planet, our Earth. Using I
 ![Earth and Moon model](./images/earth_moon.png)
 
 
+![Saturn model](./images/saturn.png)
+
+![Uranus model](./images/uranus.png)
+
+
 
 
 https://github.com/coolkidwrik/Solar_System/images/69946310/9592ac3d-bfbb-43d8-933e-24616d3f6763
