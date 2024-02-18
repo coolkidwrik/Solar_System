@@ -25,7 +25,12 @@ Using some <a href = "./utilities/getOrbitalPosition.js"> orbital physics</a>
 <h4>
   <ins>Saturn</ins>
 </h4>
+
 ![Saturn model](./images/Saturn.png)
+
+<h4>
+  <ins>Uranus</ins>
+</h4>
 
 ![Uranus model](./images/Uranus.png)
 
