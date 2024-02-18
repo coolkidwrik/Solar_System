@@ -7,7 +7,7 @@ A 3D model of our solar system that can be rendered on the browser. This include
 <ins>Process</ins>
 
 
-I started with, perhaps the most detailed and complex planet, our Earth. Using Icosahedron Geometry with a detail of 12 (which would be used for all planets), I could mimic a sphere and start placing texture maps to resemble the Earth. To create depth and detail, I combined textures for the day and nighttime so that it looks like the cities are lit in the night. I also added a cloud texture that's scaled to be slightly greater than 1 and changed the rotation speed to be a little faster than the Earth's. The result is that the clouds look like they are independent from the planet. Using some![Orbital Physics](./utilities/getOrbitalPosition.js)
+I started with, perhaps the most detailed and complex planet, our Earth. Using Icosahedron Geometry with a detail of 12 (which would be used for all planets), I could mimic a sphere and start placing texture maps to resemble the Earth. To create depth and detail, I combined textures for the day and nighttime so that it looks like the cities are lit in the night. I also added a cloud texture that's scaled to be slightly greater than 1 and changed the rotation speed to be a little faster than the Earth's. The result is that the clouds look like they are independent from the planet. Using some <a href = "./utilities/getOrbitalPosition.js"> orbital physics</a>
 
 ![Earth and Moon model](./images/earth_moon.png)
 
