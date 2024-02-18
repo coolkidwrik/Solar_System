@@ -17,6 +17,9 @@ I started with, perhaps the most detailed and complex planet, our Earth. Using I
 An important part of the Earth's system is the moon that orbits it, so I have implemented a model of the moon similar to the Earth. 
 Using some <a href = "./utilities/getOrbitalPosition.js"> orbital physics</a>, I implemented the orbiting mechanics of the moon around the earth.
 
+
+here is the implementation of <a href = "./earth/index.js">the earth-moon model</a>
+
 ![Earth and Moon model](./images/earth_moon.png)
 
 <h3>
@@ -30,6 +33,8 @@ The next most interesting planets to be working on were Saturn and Uranus becaus
 <h4>
   <ins>Saturn</ins>
 </h4>
+
+here is the implementation of <a href = "./saturn/index.js">the Saturn model</a>
 
 ![Saturn model](./images/Saturn.png)
 
