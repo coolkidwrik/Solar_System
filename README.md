@@ -11,4 +11,6 @@ I started with, perhaps the most detailed and complex planet, our Earth. Using I
 
 
 
-![Solar System](./images/system.mov)
+
+https://github.com/coolkidwrik/Solar_System/images/69946310/9592ac3d-bfbb-43d8-933e-24616d3f6763
+
