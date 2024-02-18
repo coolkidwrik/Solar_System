@@ -42,7 +42,7 @@ The next most interesting planets to be working on were Saturn and Uranus becaus
   <ins>Final Model</ins>
 </h3>
 
-Here is the final model of the entire solar system after I finished implementing all the planets. Here is the code to create <a href = "./utilities/planetBuilders">each planet</a>
+Here is the final model of the entire solar system after I finished implementing all the planets. Here is the code to create <a href = "./utilities/planet_builder">each planet</a>
 
 https://github.com/coolkidwrik/Solar_System/images/69946310/9592ac3d-bfbb-43d8-933e-24616d3f6763
 
