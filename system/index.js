@@ -155,7 +155,7 @@ function updateMercuryPosition() {
   mercury.children[0].rotation.y += 0.0007;
   // revolution info
   // TODO
-  updateOrbit(-0.001, mercury, 2.2);
+  updateOrbit(-0.0001, mercury, 2.2);
 }
 
 // Update venus position
@@ -165,7 +165,7 @@ function updateVenusPosition() {
   venus.children[1].rotation.y += 0.0001;
   // revolution info
   // TODO
-  updateOrbit(0.0009, venus, 3);
+  updateOrbit(0.00009, venus, 3);
 }
 
 // Update earth position
@@ -177,7 +177,7 @@ function updateEarthPosition() {
   earth.children[3].rotation.y += 0.002;
   // revolution info
   // TODO
-  updateOrbit(-0.004, earth, 4);}
+  updateOrbit(-0.0004, earth, 4);}
 
 // Update mars position
 function updateMarsPosition() {
@@ -186,7 +186,7 @@ function updateMarsPosition() {
   mars.children[1].rotation.y += 0.002;
   // revolution info
   // TODO
-  updateOrbit(-0.003, mars, 5);
+  updateOrbit(-0.0003, mars, 5);
 }
 
 // Update jupiter position
@@ -196,7 +196,7 @@ function updateJupiterPosition() {
   jupiter.children[1].rotation.y += 0.004;
   // revolution info
   // TODO
-  updateOrbit(-0.005, jupiter, 10);
+  updateOrbit(-0.0005, jupiter, 10);
 }
 
 // Update saturn position
@@ -207,7 +207,7 @@ function updateSaturnPosition() {
   saturn.children[2].rotation.y += 0.004;
   // revolution info
   // TODO
-  updateOrbit(-0.004, saturn, 18);
+  updateOrbit(-0.0004, saturn, 18);
 }
 
 // Update uranus position
@@ -218,7 +218,7 @@ function updateUranusPosition() {
   uranus.children[2].rotation.y += 0.003;
   // revolution info
   // TODO
-  updateOrbit(-0.003, uranus, 23);
+  updateOrbit(-0.0003, uranus, 23);
 }
 
 // Update neptune position
@@ -228,7 +228,7 @@ function updateNeptunePosition() {
   neptune.children[1].rotation.y += 0.003;
   // revolution info
   // TODO
-  updateOrbit(-0.0045, neptune, 28);
+  updateOrbit(-0.00025, neptune, 28);
 }
 
 // Update pluto position 
@@ -238,7 +238,7 @@ function updatePlutoPosition() {
   pluto.children[1].rotation.y += 0.001;
   // revolution info
   // TODO
-  updateOrbit(-0.001, pluto, 30);
+  updateOrbit(-0.0001, pluto, 30);
 }
 
 

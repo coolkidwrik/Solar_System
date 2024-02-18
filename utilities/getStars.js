@@ -1,6 +1,6 @@
 import * as THREE from "three";
 
-export default function getStars({ numStars = 1500 } = {}) {
+export default function getStars({ numStars = 1200 } = {}) {
   function randomSpherePoint() {
     const avg_var = 40;
     const avg_dist = 50;
