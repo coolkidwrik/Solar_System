@@ -35,7 +35,9 @@ Using some <a href = "./utilities/getOrbitalPosition.js"> orbital physics</a>
 ![Uranus model](./images/Uranus.png)
 
 
-
+<h3>
+  <ins>Final Model</ins>
+</h3>
 
 https://github.com/coolkidwrik/Solar_System/images/69946310/9592ac3d-bfbb-43d8-933e-24616d3f6763
 
